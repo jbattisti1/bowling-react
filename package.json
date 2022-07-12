@@ -14,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "@types/enzyme": "^3.10.12",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.0.15",
@@ -21,11 +23,12 @@
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "css-loader": "^6.7.1",
-    "enzyme": "^3.11.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
     "mini-css-extract-plugin": "^2.6.1",
     "ts-jest": "^28.0.5",
     "ts-loader": "^9.3.1",
@@ -46,6 +49,9 @@
     },
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

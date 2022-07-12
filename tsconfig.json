@@ -11,6 +11,11 @@
         "strict": true,
         "sourceMap": true,
         "target": "esnext",
+        "types": [
+            "react",
+            "react-dom",
+            "jest"
+        ]
     },
     "include": [
         "src/**/*"
