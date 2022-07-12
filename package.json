@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --port 3000",
     "build": "NODE_ENV=production webpack",
-    "test": "jest",
+    "test": "jest components",
+    "e2e": "jest e2e",
     "lint": "eslint . --ext .tsx",
     "fix": "eslint . --ext .tsx --fix"
   },
