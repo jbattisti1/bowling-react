@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import PinBox from './PinBox';
 import ScoreBox from './ScoreBox';
+import './BowlingFrame.css';
 
 export type PinBoxValue = {
     pinBoxNumber: number;
@@ -18,8 +19,9 @@ const BowlingFrame: FC<BowlingFrameProps> = (props): ReactElement => {
     );
 
     return (
-        <div data-testid="bowlingFrame">
+        <div className='bowlingFrame' data-testid="bowlingFrame">
             {pinBoxes}
+            <div className='break'></div>
             <ScoreBox frameScore={props.frameScore} />
         </div>
     );

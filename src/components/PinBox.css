@@ -1,0 +1,8 @@
+.pinBox {
+    width: 24px;
+    height: 24px;
+    border-left: 2px black solid;
+    border-bottom: 2px black solid;
+    text-align: center;
+    font-size: 18px;
+}

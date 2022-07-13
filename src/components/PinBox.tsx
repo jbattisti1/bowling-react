@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react';
+import './PinBox.css';
 
 type PinBoxProps = {
     key: React.Key;
@@ -8,7 +9,7 @@ type PinBoxProps = {
 
 const PinBox: FC<PinBoxProps> = (props): ReactElement => {
     return (
-        <div data-testid={`pinBox-${props.number}`}>{props.rollScore}</div>
+        <div className="pinBox" data-testid={`pinBox-${props.number}`}>{props.rollScore}</div>
     );
 };
 

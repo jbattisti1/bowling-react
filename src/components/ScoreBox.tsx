@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react';
+import './ScoreBox.css';
 
 type ScoreBoxProps = {
     frameScore: string;
@@ -6,7 +7,7 @@ type ScoreBoxProps = {
 
 const ScoreBox: FC<ScoreBoxProps> = (props): ReactElement => {
     return (
-        <div data-testid="scoreBox">{props.frameScore}</div>
+        <div className='scoreBox' data-testid="scoreBox">{props.frameScore}</div>
     );
 };
 
