@@ -10,18 +10,18 @@ import PinBox from './PinBox';
 describe('<PinBox />', () => {
     describe('props', () => {
         it('should show roll score of 1', () => {
-            render(<PinBox rollScore={'1'} />);
-            expect(screen.getByTestId('pinBox')).toHaveTextContent('1');
+            render(<PinBox key={1} number={1} rollScore={'1'} />);
+            expect(screen.getByTestId('pinBox-1')).toHaveTextContent('1');
         });
 
         it('should show roll score of strike', () => {
-            render(<PinBox rollScore={'X'} />);
-            expect(screen.getByTestId('pinBox')).toHaveTextContent('X');
+            render(<PinBox key={1} number={1} rollScore={'X'} />);
+            expect(screen.getByTestId('pinBox-1')).toHaveTextContent('X');
         });
 
         it('should show roll score of spare', () => {
-            render(<PinBox rollScore={'/'} />);
-            expect(screen.getByTestId('pinBox')).toHaveTextContent('/');
+            render(<PinBox key={1} number={1} rollScore={'/'} />);
+            expect(screen.getByTestId('pinBox-1')).toHaveTextContent('/');
         });
     });
 });
