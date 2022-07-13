@@ -21,33 +21,43 @@ const expectToContainAllPinboxWithRollScore = (expectedPinBoxValues: Array<PinBo
     });
 };
 
+const expectToContainScoreBox = (expectedFrameScore: string) => {
+    const bowlingFrame = screen.getByTestId('bowlingFrame');
+    const scoreBox = screen.getByTestId(`scoreBox`);
+    expect(bowlingFrame).toContainElement(scoreBox);
+    expect(scoreBox).toHaveTextContent(expectedFrameScore);
+};
+
 describe('<BowlingFrame />', () => {
     describe('props', () => {
-        it('should show 2 pinBoxes if numberOfPinBox is 2 with rollScore', () => {
+        it('should show 2 pinBoxes with rollScore and frameScore', () => {
             const expectedBowlingFrameProps: BowlingFrameProps = {
                 pinBoxValues: [{ pinBoxNumber: 1, pinBoxRollScore: '2' }, { pinBoxNumber: 2, pinBoxRollScore: '7' }],
                 frameScore: '5'
             };
             renderBowlingFrame(expectedBowlingFrameProps);
             expectToContainAllPinboxWithRollScore(expectedBowlingFrameProps.pinBoxValues);
+            expectToContainScoreBox(expectedBowlingFrameProps.frameScore);
         });
 
-        it('should show 3 pinBoxes if numberOfPinBox is 3 with rollScore', () => {
+        it('should show 3 pinBoxes with rollScore and frameScore', () => {
             const expectedBowlingFrameProps: BowlingFrameProps = {
                 pinBoxValues: [{ pinBoxNumber: 1, pinBoxRollScore: '2' }, { pinBoxNumber: 2, pinBoxRollScore: '7' }, { pinBoxNumber: 3, pinBoxRollScore: '1' }],
                 frameScore: '7'
             };
             renderBowlingFrame(expectedBowlingFrameProps);
             expectToContainAllPinboxWithRollScore(expectedBowlingFrameProps.pinBoxValues);
+            expectToContainScoreBox(expectedBowlingFrameProps.frameScore);
         });
 
-        it('should show 2 pinBoxes if rollScore is strike', () => {
+        it('should show 2 pinBoxes if rollScore is strike and frameScore', () => {
             const expectedBowlingFrameProps: BowlingFrameProps = {
                 pinBoxValues: [{ pinBoxNumber: 1, pinBoxRollScore: 'X' }, { pinBoxNumber: 2, pinBoxRollScore: '' }],
                 frameScore: '10'
             };
             renderBowlingFrame(expectedBowlingFrameProps);
             expectToContainAllPinboxWithRollScore(expectedBowlingFrameProps.pinBoxValues);
+            expectToContainScoreBox(expectedBowlingFrameProps.frameScore);
         });
 
     });
