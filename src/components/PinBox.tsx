@@ -2,7 +2,6 @@ import React, { FC, ReactElement } from 'react';
 import './PinBox.css';
 
 type PinBoxProps = {
-    key: React.Key;
     number: number;
     rollScore: string;
 };

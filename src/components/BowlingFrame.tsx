@@ -13,16 +13,16 @@ export type BowlingFrameProps = {
     frameScore: string;
 };
 
-const BowlingFrame: FC<BowlingFrameProps> = (props): ReactElement => {
-    const pinBoxes = props.pinBoxValues.map(pinBoxValue =>
-        <PinBox key={pinBoxValue.pinBoxNumber} number={pinBoxValue.pinBoxNumber} rollScore={pinBoxValue.pinBoxRollScore} />
+const BowlingFrame: FC<BowlingFrameProps> = ({ pinBoxValues, frameScore }): ReactElement => {
+    const pinBoxes = pinBoxValues.map(({ pinBoxNumber, pinBoxRollScore }) =>
+        <PinBox key={pinBoxNumber} number={pinBoxNumber} rollScore={pinBoxRollScore} />
     );
 
     return (
         <div className='bowlingFrame' data-testid="bowlingFrame">
             {pinBoxes}
             <div className='break'></div>
-            <ScoreBox frameScore={props.frameScore} />
+            <ScoreBox frameScore={frameScore} />
         </div>
     );
 };
