@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import BowlingCard from './BowlingCard';
 
 export const App = () => {
     return (
-        <span data-testid="score">0</span>
+        <BowlingCard />
     );
 };

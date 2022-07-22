@@ -19,7 +19,7 @@ const BowlingFrame: FC<BowlingFrameProps> = ({ pinBoxValues, frameScore }): Reac
     );
 
     return (
-        <div className='bowlingFrame' data-testid="bowlingFrame">
+        <div className='bowlingFrame' data-testid='bowlingFrame'>
             {pinBoxes}
             <div className='break'></div>
             <ScoreBox frameScore={frameScore} />
